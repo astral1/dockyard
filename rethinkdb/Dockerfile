@@ -1,5 +1,4 @@
 FROM        astral1/saucy:min
-
 MAINTAINER  Jiung Jeong <ethernuiel@sanultari.com> 
 
 RUN apt-get install software-properties-common -y
