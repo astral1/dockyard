@@ -7,4 +7,5 @@ RUN tar zxf redis-2.8.8.tar.gz
 WORKDIR /redis-2.8.8
 RUN make -j4
 
+EXPOSE 6379
 CMD src/redis-server
