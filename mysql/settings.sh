@@ -22,3 +22,7 @@ then
 	mysql -uroot -pmysqlroot -e "grant all privileges on *.* to '${MYSQL_USER}'@'${MYSQL_HOST}' identified by '$MYSQL_PASS';"
 	mysql -uroot -pmysqlroot -e 'flush privileges;'
 fi
+
+service mysql status
+
+exit $?
