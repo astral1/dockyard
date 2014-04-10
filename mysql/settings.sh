@@ -17,7 +17,7 @@ fi
 
 service mysql start
 EXISTS=$(mysql -uroot -pmysqlroot -N -s -e "select count(1) from mysql.user where user='$MYSQL_USER' and host='$MYSQL_HOST';" 2> /dev/null)
-if [ $EXISTS -eq 0 ]
+if [ "$EXISTS" == "0" ]
 then
 	mysql -uroot -pmysqlroot -e "grant all privileges on *.* to '${MYSQL_USER}'@'${MYSQL_HOST}' identified by '$MYSQL_PASS';"
 	mysql -uroot -pmysqlroot -e 'flush privileges;'
